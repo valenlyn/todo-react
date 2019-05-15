@@ -20,7 +20,7 @@ Do `npm install` to get and run `http-server`
 ✅ Show the validation error to the user
 
 #### Further
-Write the code that takes things out of the list.
+✅ Write the code that takes things out of the list.
 
 #### Further
-Use `moment.js` npm library to add dates to the todo list.
+✅ Use `moment.js` npm library to add dates to the todo list.

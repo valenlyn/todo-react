@@ -27,11 +27,18 @@ class List extends React.Component {
         } else if ( trimmedWord.length > 140 ) {
             this.setState({ error: "you exceeded max character length of 140 characters" });
         } else {
-            this.state.list.push( trimmedWord );
-            console.log(this.state);
+            this.state.list.push( trimmedWord + " – " + moment().fromNow() );
             this.setState({ word: "" });
         }
 
+    }
+
+    removeItem = e => {
+
+        console.log(this.state.list);
+        this.state.list.splice(e.target.id, 1);
+        console.log(this.state.list);
+        this.setState({ });
 
     }
 
@@ -39,7 +46,7 @@ class List extends React.Component {
       // render the list with a map() here
 
       let display = this.state.list.map((item, index) => {
-        return <li key={item + index}> {item} </li>
+        return <li key={item + index}> {item}  <button id={index} onClick={this.removeItem}>❌</button></li>
       })
 
       console.log("rendering");
