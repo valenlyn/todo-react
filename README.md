@@ -10,14 +10,14 @@ Do `npm install` to get and run `http-server`
 #### Create a todo list app:
 
 ##### Add:
-- a button click handler that takes what is in the input, removes it from the input and `push`es it into the list.
-- write the code that renders the list
+✅ a button click handler that takes what is in the input, removes it from the input and `push`es it into the list.
+✅ write the code that renders the list
 
 #### Further
-Create a length validation on the input. (Ex., must be more than 1 character and less than 200 characters)
+✅ Create a length validation on the input. (Ex., must be more than 1 character and less than 200 characters)
 
 #### Further
-Show the validation error to the user
+✅ Show the validation error to the user
 
 #### Further
 Write the code that takes things out of the list.
