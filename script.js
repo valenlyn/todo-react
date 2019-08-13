@@ -13,7 +13,10 @@ class List extends React.Component {
     changeHandler(event){
 
         this.setState({ word: event.target.value });
-        console.log("change", event.target.value);
+
+        if (event.target.value.length > 0) {
+          this.resetErrorMessage();
+        }
 
     }
 
@@ -23,21 +26,28 @@ class List extends React.Component {
         console.log(trimmedWord);
 
         if ( !trimmedWord ) {
+
             this.setState({ error: "too few words" });
+
         } else if ( trimmedWord.length > 140 ) {
+            
             this.setState({ error: "you exceeded max character length of 140 characters" });
+
         } else {
+           
             this.state.list.push( trimmedWord + " – " + moment().fromNow() );
             this.setState({ word: "" });
-        }
 
+        }
+    }
+
+    resetErrorMessage() {
+      this.setState({ error: "" });
     }
 
     removeItem = e => {
 
-        console.log(this.state.list);
         this.state.list.splice(e.target.id, 1);
-        console.log(this.state.list);
         this.setState({ });
 
     }
@@ -48,8 +58,6 @@ class List extends React.Component {
       let display = this.state.list.map((item, index) => {
         return <li key={item + index}> {item}  <button id={index} onClick={this.removeItem}>❌</button></li>
       })
-
-      console.log("rendering");
 
       return (
         <div className="list">
